@@ -1,0 +1,36 @@
+*{margin: 0; padding: 0;}
+#root, .app, body, html {
+    height: 100%;
+}
+body {
+    background-color: #ebeef4 !important;
+}
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 0;
+    z-index: 10;
+    height: 60px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 6px 6px rgb(31 107 255 / 10%);
+    transition: box-shadow .2s linear;
+}
+#noti_dropdown{
+    cursor: pointer;
+}
+.sidebar{
+    margin-top: 60px;
+    float: left;
+}
+.section{
+    float: left;
+    margin-top: 60px;
+}
+.footer{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    float: left;
+}
