@@ -1,14 +1,21 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { faSearch,faBell } from "@fortawesome/free-solid-svg-icons";
+import { faSearch,faBell,faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Header = props => {
   return (
     <>
         <div className={'header'}>
-            <div className={'row'}>
+            <div className={'row h-100 item-center'}>
                 <div className={'col-3'}>
-                    header
+                    <div className={'row m-0'}>
+                        <div className={'col-2 text-center'}>
+                            <h3><FontAwesomeIcon icon={faBars} /></h3>
+                        </div>
+                        <div className={'col-10'}>
+                            <h3>header</h3>
+                        </div>
+                    </div>
                 </div>
                 <div className={'col-6'}>
                     <div className={"col-auto"}>
@@ -18,13 +25,13 @@ const Header = props => {
                                     <FontAwesomeIcon icon={faSearch} />
                                 </div>
                             </div>
-                            <input type="text" className={"form-control"} placeholder="Search" />
+                            <input type="text" className={"form-control searchInput"} placeholder="Search" />
                         </div>
                     </div>
                 </div>
                 <div className={'col-3'}>
                     <span className={'badge badge-pill badge-primary dropdown-toggle'} id={"noti_dropdown"} data-toggle={"dropdown"} aria-haspopup={"true"} aria-expanded={"false"}>
-                        <FontAwesomeIcon icon={faBell} /> 4
+                        <FontAwesomeIcon icon={faBell}/> 4
                     </span>
                     <div className={"dropdown-menu dropdown-menu-right"} aria-labelledby="noti_dropdown">
                         <button className={"dropdown-item"} type="button">Action</button>
