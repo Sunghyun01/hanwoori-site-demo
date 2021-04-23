@@ -1,6 +1,7 @@
 import Main from './page/main';
 import ListView from './page/listView';
 import Layout from './template/layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './include/bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
