@@ -1,31 +1,16 @@
-import React from "react"
+import React,{useState} from "react"
+import TableColgroup from "./tableColgroup";
+import TableContent from "./tableContent";
 
 const Table = props => {
-    const {columns, colWidth, data} = props;
+    const [columns] = useState(props['columns']);
+    const [colWidth] = useState(props['colWidth']);
+    const [data] = useState(props['data']);
+
     return (
         <table className="table">
-            <colgroup>
-                {colWidth.map((width, index)=>(
-                    <col key={index} width={width} />
-                ))}
-            </colgroup>
-            <thead className="thead-dark">
-            <tr>
-                {columns.map((column) => (
-                    <th className="text-center" scope="col" key={column}>{column}</th>
-                ))}
-            </tr>
-            </thead>
-            <tbody>
-            {data.map(({name, email, phone},index) => (
-                <tr key={name + email + phone}>
-                    {columns.includes("Number") && <td className="text-center">{index+1}</td> }
-                    <td className="text-center">{name}</td>
-                    <td className="text-center">{email}</td>
-                    <td className="text-center">{phone}</td>
-                </tr>
-            ))}
-            </tbody>
+            <TableColgroup colWidth={colWidth}/>
+            <TableContent columns={columns} data={data}/>
         </table>
     )
 }
